@@ -4,7 +4,7 @@
  }
 
  body {
-     background-color: lightgray;
+     background-color: black;
      font-family: 'Bebas Neue', cursive;
  }
 
@@ -13,38 +13,34 @@
     display: grid;   
     margin: auto;
     grid-template-columns: repeat(5, 1fr) ;
-    grid-template-rows: repeat(5, 1fr);
-    border: 1px white solid;
+    grid-template-rows: repeat(4, 1fr);
     color: white;
-    background-color: rgb(211, 191, 191);    
+    background-color: black(211, 191, 191);    
     width: 80%;
-    height: 80%;
+    height: 60%;
     /*min-width: 800px;*/
     min-height: 150px;
     color: white;
-    border: 1px white solid;
     font-size: 1.5em;     
 
  }
 
- .box1 {
-     
+ .box1 {     
     display: block;
     margin-left: 10px;
-     margin-top: 10px;
+    margin-top: 10px;
     justify-content: start;
     align-items:flex-start;
-    grid-column: 0;
-    grid-row: 0;
+    grid-column: 1;
+    grid-row: 1;
   }
 
   .box3 {
-    font-size: 15em;
+    font-size: 25em;
     grid-column-start: 1;
     grid-column-end: span 5;
-    grid-row-start: 2;
-    grid-row-end: span 5;
-    padding: 0.5em;
+    grid-row-start: 1;    
+    grid-row-end: span 4;
   }
 
 

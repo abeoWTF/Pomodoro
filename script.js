@@ -1,26 +1,10 @@
 
+// Loads current time on the page
 window.onload = function () {
-    DisplayCurrentTime();
-   
+    DisplayCurrentTime();   
 };
 
-
-function runTimer(min, sec) {
-    var minute = min;
-    var sec = sec;
-    setInterval(function() {
-      document.getElementById("timer").innerHTML = minute + " : " + sec;
-      sec--;
-      if (sec == 00) {
-        minute --;
-        sec = 60;
-        if (minute == 0) {
-          
-        }
-      }
-    }, 1000);
-  }
-
+// Funciton that runs/updates clocl
 function DisplayCurrentTime() {
     var date = new Date();
     var hours = date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
@@ -31,41 +15,31 @@ function DisplayCurrentTime() {
     lblTime.innerHTML = time;
 };
 
+// Updates clock every second
 setInterval(DisplayCurrentTime, 1000);
 
+// Displays time (function)
+function startTimer(duration, display) {
+  var timer = duration, minutes, seconds;
+  setInterval(function () {
+      minutes = parseInt(timer / 60, 10);
+      seconds = parseInt(timer % 60, 10);
 
-const input = document.querySelector('input');
-const log = document.getElementById('values');
+      minutes = minutes < 10 ? "0" + minutes : minutes;
+      seconds = seconds < 10 ? "0" + seconds : seconds;
 
-input.addEventListener('input', updateValue);
+      display.textContent = minutes + ":" + seconds;
 
-function updateValue(e) {
-  log.textContent = e.target.value;
+      if (--timer < 0) {
+        display = document.querySelector('#time')
+        display.innerHTML = "Take a break!"
+      }
+  }, 1000);
 }
 
-function setMinuteValue() {
-  let tokenAmount = document.getElementById("numberInput").value-1;
-  runTimer(tokenAmount, 60);
-
-}
-
-var x = document.getElementById("myAudio"); 
-
-function playAudio() { 
-  x.play(); 
-} 
-
-/*
-function addTwentyFive() {
-    var date = new Date();
-    var minutesToAdd = 25; 
-    var futureDate = new Date(date.getTime() + minutesToAdd*60000);  
-    console.log(futureDate);
-    var lblFutureTime = document.getElementById("newTime");
-    var lblparaShow = document.getElementById("timeShow");
-    lblFutureTime.innerHTML = futureDate;
-    lblparaShow.style.display = "block";   
-}*/
-
-
-
+// Takes inputvalue and starts timer
+function loadTimer() {
+  display = document.querySelector('#time');
+  let tokenAmount = document.getElementById("numberInput").value * 60;
+  startTimer(tokenAmount, display);
+};
