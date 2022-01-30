@@ -10,11 +10,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&family=Space+Mono&display=swap" rel="stylesheet">
 </head>
 <body> 
-    <content>                 
-        <p class="text-current-time"><span id="clock"></span></p>
-        <button class="button-start-timer" onclick="runTimer()">Start</button>
+    <audio id="myAudio">
+        <source src="./sound/beep.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <content>     
+        <div class="box1">             
+            <p class="text-current-time"><span id="clock"></span></p>
+                     
+            <input type="number" name="numberInput" id="numberInput" max="60" min="1" step="1">
+            <br>
+            <button type="button" onclick="setMinuteValue()">Set time</button>
+            
+            <!-- <button class="button-start-timer" onclick="runTimer()">Start</button> -->
+        </div>
 
-        <p class="text-timer"><span id="timer"></span></p>
+        <div class="box3">
+            <p class="text-timer"><span id="timer"></span></p>
+        </div>
+
 
     </content>
 

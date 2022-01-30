@@ -5,9 +5,9 @@ window.onload = function () {
 };
 
 
-function runTimer() {
-    var minute = 24;
-    var sec = 60;
+function runTimer(min, sec) {
+    var minute = min;
+    var sec = sec;
     setInterval(function() {
       document.getElementById("timer").innerHTML = minute + " : " + sec;
       sec--;
@@ -15,7 +15,7 @@ function runTimer() {
         minute --;
         sec = 60;
         if (minute == 0) {
-          minute = 5;
+          
         }
       }
     }, 1000);
@@ -32,6 +32,28 @@ function DisplayCurrentTime() {
 };
 
 setInterval(DisplayCurrentTime, 1000);
+
+
+const input = document.querySelector('input');
+const log = document.getElementById('values');
+
+input.addEventListener('input', updateValue);
+
+function updateValue(e) {
+  log.textContent = e.target.value;
+}
+
+function setMinuteValue() {
+  let tokenAmount = document.getElementById("numberInput").value-1;
+  runTimer(tokenAmount, 60);
+
+}
+
+var x = document.getElementById("myAudio"); 
+
+function playAudio() { 
+  x.play(); 
+} 
 
 /*
 function addTwentyFive() {

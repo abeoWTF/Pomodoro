@@ -11,53 +11,45 @@
  content {
 
     display: grid;   
-    grid-template-columns: [first] 25% [line2] 1fr [line3] 1fr [line4] 25% ;
-    grid-template-rows: [row1-start] 10% [row1-end] 10% [third-line] 1fr [last-line] 1fr;
+    margin: auto;
+    grid-template-columns: repeat(5, 1fr) ;
+    grid-template-rows: repeat(5, 1fr);
     border: 1px white solid;
     color: white;
-    background-color: rgb(211, 191, 191);
-    
-
-    padding-top: 01.5em;
-    margin-top: 10em;
-    width: 800px;
-    height: 400px;
-    min-width: 800px;
-    min-height: 400px;
+    background-color: rgb(211, 191, 191);    
+    width: 80%;
+    height: 80%;
+    /*min-width: 800px;*/
+    min-height: 150px;
     color: white;
     border: 1px white solid;
     font-size: 1.5em;     
-    overflow: hidden; 
-    z-index: 1;
+
  }
 
+ .box1 {
+     
+    display: block;
+    margin-left: 10px;
+     margin-top: 10px;
+    justify-content: start;
+    align-items:flex-start;
+    grid-column: 0;
+    grid-row: 0;
+  }
 
-.text-current-time {    
-    font-size: 2em;
-    grid-column-start: first;
-    grid-column-end: span line2;
-    grid-row-start: row1-start;
-    grid-row-end: row1-start;
-}
+  .box3 {
+    font-size: 15em;
+    grid-column-start: 1;
+    grid-column-end: span 5;
+    grid-row-start: 2;
+    grid-row-end: span 5;
+    padding: 0.5em;
+  }
 
 
 
-.button-start-timer {
-    grid-column-start: line2;
-    grid-column-end: span line4;
-    grid-row-start: row1-end;
-    grid-row-end: third-line;
 
-}
-
-
-#text-timer {    
-    font-size: 2em;
-    grid-column-start: first;
-    grid-column-end: span line2;
-    grid-row-start: row2-end;
-    grid-row-end: third-line;
-}
 
 
 
